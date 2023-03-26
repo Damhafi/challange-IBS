@@ -1,0 +1,24 @@
+<ng-container *ngIf="person">
+  <button mat-icon-button (click)="goBack()" class="button-back">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div class="container-details">
+    <div class="container-person">
+      <div class="container-image">
+        <img src="./assets/images/avatar.png" alt="image" />
+      </div>
+
+      <div class="container-info">
+        <h3><strong>Name: </strong>{{ person.name }}</h3>
+        <h4><strong>Phone: </strong>{{ person?.phone }}</h4>
+        <p><strong>Email: </strong>{{ person?.email }}</p>
+        <p><strong>Profession: </strong>{{ person?.profession?.name }}</p>
+
+        <div class="container-options" *ngIf="showRemoveButton">
+          <button mat-raised-button color="warn" (click)="showModalRemove(person)">Remover</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

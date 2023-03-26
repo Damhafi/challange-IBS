@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{ isEdit ? 'EDITAR' : 'CADASTRAR' }}</h1>
+
+<div mat-dialog-content>
+  <div class="container-forms">
+    <mat-form-field appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input matInput [(ngModel)]="data.name" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Profession:</mat-label>
+      <mat-select [(ngModel)]="data.profession" name="profession" required>
+        <ng-template ngFor let-option [ngForOf]="professions">
+          <mat-option [value]="option">{{ option.name }}</mat-option>
+        </ng-template>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input matInput [(ngModel)]="data.phone" name="phone" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput [(ngModel)]="data.email" name="email" required>
+    </mat-form-field>
+  </div>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    {{ isEdit ? 'Editar' : 'Cadastrar' }}
+  </button>
+</div>

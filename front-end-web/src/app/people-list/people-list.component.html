@@ -1,0 +1,32 @@
+<div class="center-content">
+  <h2>List of People</h2>
+
+  <div class="container-peoples">
+    <div *ngFor="let person of people" class="person">
+      <div class="container-image">
+        <img src="./assets/images/avatar.png" alt="image" />
+      </div>
+
+      <div class="container-details">
+        <div class="container-details-text">
+          <h3>Name: {{ person.name }}</h3>
+          <div class="line"></div>
+          <h4>Profession: {{ person.profession ? person.profession.name : '' }}</h4>
+        </div>
+
+        <div class="container-options">
+          <button mat-icon-button matTooltip="Editar" (click)="showModalEdit(person)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <a class="mat-raised-button button-blue" mat-button [routerLink]="['/details', person.id]">Leia mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-button-add">
+    <button mat-fab color="primary" (click)="showModalCreate()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

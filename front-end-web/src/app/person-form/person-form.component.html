@@ -1,0 +1,10 @@
+<h2>{{action}} Person</h2>
+<form (ngSubmit)="onSubmit()" fxLayout="column">
+  <mat-form-field appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input matInput type="text" [(ngModel)]="person.name" name="name" required>
+  </mat-form-field>
+  <div fxLayoutAlign="end">
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+</form>
