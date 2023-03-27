@@ -46,9 +46,3 @@ O servidor estará disponível em `http://localhost:4200`.
 
 NodeJS = 16.9.1
 PostegreSQL = 15
-
-## Licença
-
-Indique a licença sob a qual o projeto está disponível. Por exemplo:
-
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE.md para obter mais informações.
