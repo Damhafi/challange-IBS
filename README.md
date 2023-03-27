@@ -39,7 +39,7 @@ O servidor estará disponível em `http://localhost:4200`.
 
 ## Configuração
 
-#### Back-end
+#### --- Back-end ----
 ```DB_NAME=my_database```
 ```DB_USER=my_user```
 ```DB_PASSWORD=my_password```
