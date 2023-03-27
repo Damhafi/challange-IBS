@@ -1,13 +1,13 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
 }
 
 model Person {
@@ -27,6 +27,6 @@ model Profession {
 
 model Pet {
   id       Int    @id @default(autoincrement())
-  pet_name String  
-  owner  String
+  pet_name String
+  owner    String
 }
