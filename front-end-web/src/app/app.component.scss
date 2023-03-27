@@ -1,6 +1,5 @@
 .center-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 100vh;
@@ -9,6 +8,11 @@
   header, footer {
     text-align: center;
     width: 100%;
+  }
+
+  footer{
+    position: fixed;
+    bottom: 0;
   }
 
   mat-toolbar-row{
