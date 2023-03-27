@@ -2,41 +2,47 @@
 Challange IBS -  Angular 2+ and Node
 
 
-This APP is a complete project using Angular 2+ and Node;
-It's a register of person;
-You can use any framework, ORM, library and database that you prefer;
+## Instruções de instalação e execução
 
-Steps:
+### Back-end
 
-Database:
-1- The database should have three tables: person, profession, pet;
+1. Instale as dependências do projeto com o comando:
 
-API
-1- The API should have a register para person anda profession;
-2- A Person could have only one prefession;
-3- The API should have a endpoint to person and other to profession;
-4- To both of them you have to build CRUD operations;
+```npm i```
 
-Frontend:
+2. Crie as tabelas do banco de dados e insira dados iniciais com o comando:
 
-1- Should have a page to list all people;
-2- When clicked on "read more" button should  redirect to "detais person"
-   page showing only the person selected;
-3- Should allow register new person;
-4- Should allow edit the person;
-5- Should allow remove person
-6- When clicked on remove button should show the modal screen asking 
-   if you have sure about the delete. if yes remove if not do nothing;
-   
-Test;
-1- Implement some test in API;
-2- Implement some test in Front;
+```npm run seed```
 
-Database:
-Pet table: id, owner, pet_name;
-1- Create a trigger when a person is created the pet table receives a record linked to this person, the pet name must be person name + dog or cat...
+3. Inicie o servidor local com o comando:
 
-*feel free to apply design patterns, clean code, SOLID concept and any other technologies.
+```npm run dev```
+
+O servidor estará disponível em `http://localhost:3000`.
 
 
-Good luck;
+### Front-end
+
+1. Instale as dependências do projeto com o comando:
+
+```npm i```
+
+2. Inicie o servidor local de desenvolvimento com o comando:
+
+```npm run start```
+
+O servidor estará disponível em `http://localhost:4200`.
+
+## Configuração
+
+```DB_NAME=my_database```
+```DB_USER=my_user```
+```DB_PASSWORD=my_password```
+```DB_HOST=my_host```
+```DB_PORT=5432```
+```DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=public```
+
+## Requisitos de sistema
+
+NodeJS = 16.9.1
+PostegreSQL = 15
