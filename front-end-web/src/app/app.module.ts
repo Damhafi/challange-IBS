@@ -23,6 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ConfirmationDialogComponent } from './person-details/dialog-confirm/dialog-confirm';
 
 
@@ -36,6 +37,7 @@ import { ConfirmationDialogComponent } from './person-details/dialog-confirm/dia
     ConfirmationDialogComponent
   ],
   imports: [
+    MatSnackBarModule,
     MatSelectModule,
     MatOptionModule,
     BrowserModule,

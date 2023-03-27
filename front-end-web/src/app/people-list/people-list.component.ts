@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IHttpResponse } from '../../types';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { PeopleDialogForm } from '../people-dialog-forms/people-dialog-forms';
 
 interface IPerson {
@@ -31,7 +32,11 @@ export class PeopleListComponent implements OnInit {
   };
   professions: { id: number; name: string }[] | undefined;
 
-  constructor(private http: HttpClient, public dialog: MatDialog) {}
+  constructor(
+    private http: HttpClient,
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.getPeople();
@@ -52,13 +57,24 @@ export class PeopleListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.data = result;
-        this.createPerson(result);
+        if (result.name === '' || result.profession === ''
+        || result.phone === '' || result.email === ''
+        ) {
+          this.snackBar.open('Preencha os campos Obrigatórios', 'Fechar', {
+            duration: 3000,
+          });
+          return;
+        } else {
+          console.log(result);
+          this.data = result;
+          this.createPerson(result);
+        }
       }
     });
   }
 
   createPerson(data: IPerson) {
+    console.log({data});
     this.http.post<IHttpResponse>('/api/persons', {
       name: data.name,
       professionId: data.profession.id,
@@ -120,7 +136,6 @@ export class PeopleListComponent implements OnInit {
 
   getPeople(): void {
     this.http.get<IHttpResponse>('/api/persons').subscribe((data) => {
-      console.log(data, '<-= data people');
       this.people = data?.payload?.result;
       this.professions = this.people?.map((p) => p.profession) || [];
     });
