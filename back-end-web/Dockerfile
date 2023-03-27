@@ -13,12 +13,10 @@ RUN npm install
 # Copy the entire back-end web app directory to /app
 COPY back-end-web .
 
+COPY .env .
+
 # Expose the back-end web app port
 EXPOSE 3000
-
-# Set environment variables for back-end web app
-ARG DATABASE_URL
-ENV DATABASE_URL=${DATABASE_URL}
 
 # Build the back-end web app
 RUN npm run build

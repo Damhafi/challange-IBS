@@ -1,32 +1,31 @@
 version: '3'
+
 services:
   db:
     image: postgres:latest
     restart: always
-    env_file:
-      - .env
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+    env_file:
+      - .env
   backend:
     build:
       context: .
       dockerfile: back-end-web/Dockerfile
     image: backend-web
     restart: always
-    env_file:
-      - .env
-    environment:
-      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@db:${DB_PORT}/${DB_NAME}?schema=public
     ports:
-      - '3030:3030'
+      - '3000:3000'
     depends_on:
       - db
+    env_file:
+      - .env
   frontend:
     build:
       context: .
