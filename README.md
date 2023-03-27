@@ -2,10 +2,6 @@
 Challange IBS -  Angular 2+ and Node
 
 
-# Nome do Projeto
-
-Descrição breve do projeto.
-
 ## Instruções de instalação e execução
 
 ### Back-end
