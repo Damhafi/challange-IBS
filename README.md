@@ -31,19 +31,21 @@ O servidor estará disponível em `http://localhost:3000`.
 
 ```npm run start```
 
-O servidor estará disponível em `http://localhost:8080`.
+O servidor estará disponível em `http://localhost:4200`.
 
 ## Configuração
 
-Forneça informações sobre configurações adicionais, como variáveis de ambiente, banco de dados, etc.
+```DB_NAME=my_database```
+```DB_USER=my_user```
+```DB_PASSWORD=my_password```
+```DB_HOST=my_host```
+```DB_PORT=5432```
+```DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?schema=public```
 
 ## Requisitos de sistema
 
-Forneça informações sobre requisitos de sistema, como versões do Node.js, bancos de dados suportados, etc.
-
-## Contribuição
-
-Forneça informações sobre como os usuários podem contribuir com o projeto. Inclua informações sobre como clonar o repositório, fazer pull requests e padrões de codificação.
+NodeJS = 16.9.1
+PostegreSQL = 15
 
 ## Licença
 
