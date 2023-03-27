@@ -2,7 +2,7 @@
   "name": "expressjs-prisma",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Jake Runzer",
+  "author": "Yusuf",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/index.ts",
