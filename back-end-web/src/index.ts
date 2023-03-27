@@ -98,7 +98,7 @@ app.get("/persons/:id", async (req, res) => {
 app.post("/persons", async (req, res) => {
   const { name, professionId, phone, email } = req.body;
 
-  if (!name || !professionId) {
+  if (!name || !professionId || !phone || !email) {
     return res.json({
       success: false,
       payload: {
