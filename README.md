@@ -10,11 +10,15 @@ Challange IBS -  Angular 2+ and Node
 
 ```npm i```
 
-2. Crie as tabelas do banco de dados e insira dados iniciais com o comando:
+2. Execute as migrações do banco de dados com o comando:
+
+```prisma migrate dev```
+
+3. Crie as tabelas do banco de dados e insira dados iniciais com o comando:
 
 ```npm run seed```
 
-3. Inicie o servidor local com o comando:
+4. Inicie o servidor local com o comando:
 
 ```npm run dev```
 
