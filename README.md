@@ -20,7 +20,7 @@ Descrição breve do projeto.
 
 3. Inicie o servidor local com o comando:
 
-```npm run dev````
+```npm run dev```
 
 O servidor estará disponível em `http://localhost:3000`.
 
